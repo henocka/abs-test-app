@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {InputDataService} from '../../services/input-data.service';
 
 @Component({
   selector: 'app-input-wrapper',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InputWrapperComponent implements OnInit {
 
-  constructor() { }
+  availableTags: string[];
+
+  constructor(private inputDataService: InputDataService) { }
 
   ngOnInit(): void {
+    this.availableTags = this.inputDataService.getInputData();
+    ($('#tags') as any).autocomplete({
+      source: this.availableTags
+    });
   }
 
 }

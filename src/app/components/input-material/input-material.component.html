@@ -1,0 +1,21 @@
+
+<div class="grid-container">
+  <div class="grid-child">Tags using angular material</div>
+  <div class="grid-child">
+    <form class="example-form">
+      <mat-form-field appearance="fill">
+        <mat-label>Tags : </mat-label>
+        <input type="text"
+               aria-label="tags"
+               matInput
+               [formControl]="myControl"
+               [matAutocomplete]="auto">
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+  </div>
+</div>
