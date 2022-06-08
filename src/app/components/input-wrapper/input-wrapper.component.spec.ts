@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { InputWrapperComponent } from './input-wrapper.component';
+import {By} from '@angular/platform-browser';
 
 describe('InputWrapperComponent', () => {
   let component: InputWrapperComponent;
